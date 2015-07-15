@@ -10,3 +10,7 @@ gradle-app.setting
 *~
 .DS_STORE
 .idea
+
+*.ipr
+*.iws
+*.iml
