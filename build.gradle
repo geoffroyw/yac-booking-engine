@@ -26,6 +26,8 @@ targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-amqp")
+    compile('com.fasterxml.jackson:jackson-parent:2.6.1')
+    compile('com.fasterxml.jackson.core:jackson-databind:2.5.4')
     testCompile("junit:junit")
 }
 
