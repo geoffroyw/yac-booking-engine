@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/geoffroyw/yac-booking-engine.svg?branch=master)](https://travis-ci.org/geoffroyw/yac-booking-engine)
+
 # yac-booking-engine #
 Booking engine for yac.io
 
