@@ -1,9 +1,19 @@
 package yac.io.booking.request;
 
+import yac.io.booking.engine.entities.Booking;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by geoffroy on 17/07/15.
  */
 public class BookingRequest {
+
+    private static final String DATE_FORMAT = "yyyy-MM-dd";
+
+    private static SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
 
     private int id;
 
@@ -119,5 +129,84 @@ public class BookingRequest {
                 ", created_at=" + created_at +
                 ", updated_at=" + updated_at +
                 '}';
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public Booking toBooking() throws ParseException {
+        Date fromDate = dateFormat.parse(start_date);
+        Date toDate= dateFormat.parse(end_date);
+
+        return Booking.builder().startDate(fromDate).endDate(toDate).build();
+    }
+
+    public static class Builder {
+        private BookingRequest request = new BookingRequest();
+        private int id;
+        private int customer_id;
+        private int apartment_id;
+        private String start_date;
+        private String end_date;
+        private int number_of_adult;
+        private int number_of_children;
+        private String state;
+        private String created_at;
+        private String updated_at;
+
+        public Builder id(int id) {
+            request.id = id;
+            return this;
+        }
+
+        public Builder customer_id(int customer_id) {
+            request.customer_id = customer_id;
+            return this;
+        }
+
+        public Builder apartment_id(int apartment_id) {
+            request.apartment_id = apartment_id;
+            return this;
+        }
+
+        public Builder start_date(String start_date) {
+            request.start_date = start_date;
+            return this;
+        }
+
+        public Builder end_date(String end_date) {
+            request.end_date = end_date;
+            return this;
+        }
+
+        public Builder number_of_adult(int number_of_adult) {
+            request.number_of_adult = number_of_adult;
+            return this;
+        }
+
+        public Builder number_of_children(int number_of_children) {
+            request.number_of_children = number_of_children;
+            return this;
+        }
+
+        public Builder state(String state) {
+            request.state = state;
+            return this;
+        }
+
+        public Builder created_at(String created_at) {
+            request.created_at = created_at;
+            return this;
+        }
+
+        public Builder updated_at(String updated_at) {
+            request.updated_at = updated_at;
+            return this;
+        }
+
+        public BookingRequest build() {
+            return request;
+        }
     }
 }
