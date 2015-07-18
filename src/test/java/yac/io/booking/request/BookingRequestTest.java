@@ -41,4 +41,22 @@ public class BookingRequestTest {
 
         assertThat(booking.getEndDate(), is(Date.from(endDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant())));
     }
+
+    @Test
+    public void request_number_of_adult_maps_to_booking_numberOfAdult() throws ParseException {
+        BookingRequest request = prototypeBookingRequest().number_of_adult(3).build();
+
+        Booking booking = request.toBooking();
+
+        assertThat(booking.getNumberOfAdult(), is(3));
+    }
+
+    @Test
+    public void request_number_of_children_maps_to_booking_numberOfChildren() throws ParseException {
+        BookingRequest request = prototypeBookingRequest().number_of_children(2).build();
+
+        Booking booking = request.toBooking();
+
+        assertThat(booking.getNumberOfChildren(), is(2));
+    }
 }

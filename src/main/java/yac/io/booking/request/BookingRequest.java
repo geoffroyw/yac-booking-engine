@@ -137,9 +137,9 @@ public class BookingRequest {
 
     public Booking toBooking() throws ParseException {
         Date fromDate = dateFormat.parse(start_date);
-        Date toDate= dateFormat.parse(end_date);
+        Date toDate = dateFormat.parse(end_date);
 
-        return Booking.builder().startDate(fromDate).endDate(toDate).build();
+        return Booking.builder().startDate(fromDate).endDate(toDate).numberOfAdult(number_of_adult).numberOfChildren(number_of_children).build();
     }
 
     public static class Builder {

@@ -1,6 +1,7 @@
 package yac.io.booking.engine.entities;
 
 import javax.persistence.*;
+import javax.persistence.metamodel.Bindable;
 import java.util.Date;
 
 /**
@@ -26,6 +27,10 @@ public class Booking {
     private Date endDate;
 
     private Status status;
+
+    private int numberOfAdult;
+
+    private int numberOfChildren;
 
 
     public Booking() {
@@ -88,6 +93,24 @@ public class Booking {
         this.status = status;
     }
 
+    @Column(name = "number_of_adult")
+    public int getNumberOfAdult() {
+        return numberOfAdult;
+    }
+
+    public void setNumberOfAdult(int numberOfAdult) {
+        this.numberOfAdult = numberOfAdult;
+    }
+
+    @Column(name = "number_of_children")
+    public int getNumberOfChildren() {
+        return numberOfChildren;
+    }
+
+    public void setNumberOfChildren(int numberOfChildren) {
+        this.numberOfChildren = numberOfChildren;
+    }
+
     @Override
     public String toString() {
         return "Booking{" +
@@ -141,6 +164,16 @@ public class Booking {
 
         public Builder status(Status status) {
             booking.status = status;
+            return this;
+        }
+
+        public Builder numberOfAdult(int nb) {
+            booking.numberOfAdult = nb;
+            return this;
+        }
+
+        public Builder numberOfChildren(int nb) {
+            booking.numberOfChildren = nb;
             return this;
         }
 
