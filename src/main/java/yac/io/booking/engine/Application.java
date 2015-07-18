@@ -14,7 +14,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
-import yac.io.booking.engine.receiver.BookingRequestReceiver;
+import yac.io.booking.request.BookingRequestReceiver;
 
 /**
  * Created by geoffroy on 15/07/15.

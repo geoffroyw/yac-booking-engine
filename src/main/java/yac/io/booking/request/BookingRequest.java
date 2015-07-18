@@ -1,4 +1,4 @@
-package yac.io.booking.engine.receiver;
+package yac.io.booking.request;
 
 /**
  * Created by geoffroy on 17/07/15.

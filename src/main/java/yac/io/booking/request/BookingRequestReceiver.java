@@ -1,4 +1,4 @@
-package yac.io.booking.engine.receiver;
+package yac.io.booking.request;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
