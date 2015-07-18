@@ -1,4 +1,4 @@
-package yac.io.booking.engine;
+package yac.io.booking.engine.application;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
