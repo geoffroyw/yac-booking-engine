@@ -1,0 +1,5 @@
+username: yac
+password: yac
+url: jdbc:mysql://localhost/yac_test
+driver: com.mysql.jdbc.Driver
+dialect: org.hibernate.dialect.MySQLDialect

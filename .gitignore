@@ -14,3 +14,4 @@ gradle-app.setting
 *.ipr
 *.iws
 *.iml
+src/main/resources/config/application.yml

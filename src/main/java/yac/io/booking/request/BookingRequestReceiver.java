@@ -8,7 +8,6 @@ import org.springframework.amqp.support.converter.ClassMapper;
 import org.springframework.amqp.support.converter.DefaultClassMapper;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.context.annotation.Bean;
-import yac.io.booking.engine.entities.Booking;
 
 import java.nio.charset.StandardCharsets;
 

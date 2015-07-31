@@ -1,5 +1,6 @@
 package yac.io.booking.engine.creation.manager;
 
+import yac.io.booking.engine.creation.exception.BookingCreationException;
 import yac.io.booking.request.BookingRequest;
 
 import java.text.ParseException;
@@ -9,5 +10,5 @@ import java.text.ParseException;
  */
 public interface BookingCreationManager {
 
-    void processRequest(BookingRequest request) throws ParseException;
+    void processRequest(BookingRequest request) throws ParseException, BookingCreationException;
 }

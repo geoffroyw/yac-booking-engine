@@ -18,12 +18,16 @@ public class Apartment {
     }
 
     @Id
-    @GeneratedValue(generator = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
     }
 
-    @Column(name = "name", insertable = false, updatable = false)
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Column(name = "name", insertable = true, updatable = false)
     public String getName() {
         return name;
     }
@@ -32,7 +36,7 @@ public class Apartment {
         this.name = name;
     }
 
-    @Column(name = "capacity", insertable = false, updatable = false)
+    @Column(name = "capacity", insertable = true, updatable = false)
     public int getCapacity() {
         return capacity;
     }
@@ -57,6 +61,10 @@ public class Apartment {
                 ", name='" + name + '\'' +
                 ", capacity=" + capacity +
                 '}';
+    }
+
+    public static Builder builder() {
+        return new Builder();
     }
 
 

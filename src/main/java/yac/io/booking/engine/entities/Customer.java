@@ -26,9 +26,13 @@ public class Customer {
     }
 
     @Id
-    @GeneratedValue(generator = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Column(name = "first_name", insertable = false, updatable = false, nullable = false)
@@ -85,6 +89,10 @@ public class Customer {
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 '}';
+    }
+
+    public static Builder builder() {
+        return new Builder();
     }
 
     public static class Builder {

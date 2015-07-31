@@ -1,7 +1,6 @@
 package yac.io.booking.engine.entities;
 
 import javax.persistence.*;
-import javax.persistence.metamodel.Bindable;
 import java.util.Date;
 
 /**
@@ -38,13 +37,17 @@ public class Booking {
     }
 
     @Id
-    @GeneratedValue(generator = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @Column(name = "customer_id")
+    @JoinColumn(name = "customer_id", nullable = false)
     public Customer getCustomer() {
         return customer;
     }
@@ -54,7 +57,7 @@ public class Booking {
     }
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @Column(name = "apartment_id")
+    @JoinColumn(name = "apartment_id", nullable = false)
     public Apartment getApartment() {
         return apartment;
     }
