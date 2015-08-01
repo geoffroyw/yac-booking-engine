@@ -2,4 +2,8 @@ language: java
 jdk:
   - oraclejdk8
 before_script:
-  - mysql -e 'create database yac_test;'
+  - cp src/test/resources/config/application.travis.yml src/test/resources/config/application.yml
+  - mysql -e 'create database yac_booking_engine;' -uroot
+
+after_success:
+  - coveralls

@@ -1,5 +1,5 @@
-username: yac
-password: yac
+username: travis
+password:
 url: jdbc:mysql://localhost/yac_booking_engine
 driver: com.mysql.jdbc.Driver
 dialect: org.hibernate.dialect.MySQLDialect

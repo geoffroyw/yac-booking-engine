@@ -16,6 +16,7 @@ import yac.io.booking.engine.entities.Booking;
 import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 /**
  * Created by geoffroy on 31/07/15.
@@ -31,11 +32,13 @@ public class RepositoryConfig {
 
     private static final String PROPERTY_NAME_HIBERNATE_DIALECT ="hibernate.dialect";
     private static final String PROPERTY_NAME_HIBERNATE_SHOW_SQL = "hibernate.show_sql";
+    private static final String HIBERNATE_HBM2DDL_AUTO = "hibernate.hbm2ddl.auto";
     private String username;
     private String url;
     private String password;
     private String driver;
     private String dialect;
+    private String hibernateHbm2ddl;
 
 
     @Bean
@@ -54,6 +57,7 @@ public class RepositoryConfig {
         Map<String, String> properties = new HashMap<>();
         properties.put(PROPERTY_NAME_HIBERNATE_DIALECT, dialect);
         properties.put(PROPERTY_NAME_HIBERNATE_SHOW_SQL, "true");
+        properties.put(HIBERNATE_HBM2DDL_AUTO, hibernateHbm2ddl);
         return builder.dataSource(dataSource()).properties(properties).build();
     }
 
@@ -95,5 +99,13 @@ public class RepositoryConfig {
 
     public void setDialect(String dialect) {
         this.dialect = dialect;
+    }
+
+    public String getHibernateHbm2ddl() {
+        return hibernateHbm2ddl;
+    }
+
+    public void setHibernateHbm2ddl(String hibernateHbm2ddl) {
+        this.hibernateHbm2ddl = hibernateHbm2ddl;
     }
 }

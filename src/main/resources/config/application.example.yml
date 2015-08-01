@@ -3,3 +3,4 @@ password: password
 url: host
 driver: com.mysql.jdbc.Driver
 dialect: org.hibernate.dialect.MySQLDialect
+hibernateHbm2ddl: update
