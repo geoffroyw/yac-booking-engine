@@ -1,6 +1,7 @@
 package yac.io.booking.engine.entities;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -8,11 +9,14 @@ import java.util.List;
  */
 @Entity
 @Table(name = "apartment_apartments")
-public class Apartment {
+public class Apartment extends AuditableEntity {
     private Long id;
     private String name;
     private int capacity;
     private List<Booking> bookings;
+
+    private Date createdAt;
+    private Date updatedAt;
 
     public Apartment() {
     }
@@ -53,6 +57,9 @@ public class Apartment {
     public void setBookings(List<Booking> bookings) {
         this.bookings = bookings;
     }
+
+
+
 
     @Override
     public String toString() {

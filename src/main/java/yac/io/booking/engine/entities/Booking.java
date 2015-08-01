@@ -7,8 +7,8 @@ import java.util.Date;
  * Created by geoffroy on 18/07/15.
  */
 @Entity
-@Table(name = "boooking")
-public class Booking {
+@Table(name = "rentals")
+public class Booking extends AuditableEntity {
 
 
     public enum Status {
@@ -25,7 +25,7 @@ public class Booking {
 
     private Date endDate;
 
-    private Status status;
+    private Status state;
 
     private int numberOfAdult;
 
@@ -87,13 +87,13 @@ public class Booking {
     }
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status")
-    public Status getStatus() {
-        return status;
+    @Column(name = "state")
+    public Status getState() {
+        return state;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setState(Status state) {
+        this.state = state;
     }
 
     @Column(name = "number_of_adult")
@@ -122,7 +122,7 @@ public class Booking {
                 ", apartment=" + apartment +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
-                ", status=" + status +
+                ", state=" + state +
                 '}';
     }
 
@@ -166,7 +166,7 @@ public class Booking {
         }
 
         public Builder status(Status status) {
-            booking.status = status;
+            booking.state = status;
             return this;
         }
 

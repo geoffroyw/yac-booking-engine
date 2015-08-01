@@ -8,7 +8,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "customers")
-public class Customer {
+public class Customer extends AuditableEntity {
 
     private Long id;
 
@@ -35,7 +35,7 @@ public class Customer {
         this.id = id;
     }
 
-    @Column(name = "first_name", insertable = false, updatable = false, nullable = false)
+    @Column(name = "first_name", insertable = true, updatable = true, nullable = false)
     public String getFirstName() {
         return firstName;
     }
@@ -44,7 +44,7 @@ public class Customer {
         this.firstName = firstName;
     }
 
-    @Column(name = "last_name", insertable = false, updatable = false, nullable = false)
+    @Column(name = "last_name", insertable = true, updatable = true, nullable = false)
     public String getLastName() {
         return lastName;
     }
@@ -53,7 +53,7 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    @Column(name = "email", insertable = false, updatable = false)
+    @Column(name = "email", insertable = true, updatable = true)
     public String getEmail() {
         return email;
     }
@@ -62,7 +62,7 @@ public class Customer {
         this.email = email;
     }
 
-    @Column(name = "phone", insertable = false, updatable = false)
+    @Column(name = "phone", insertable = true, updatable = true)
     public String getPhone() {
         return phone;
     }
