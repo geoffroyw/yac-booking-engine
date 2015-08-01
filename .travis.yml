@@ -1,6 +1,8 @@
 language: java
 jdk:
   - oraclejdk8
+env:
+  - DB=mysql
 before_script:
   - cp src/test/resources/config/application.travis.yml src/test/resources/config/application.yml
   - mysql -e 'create database yac_booking_engine;' -uroot
