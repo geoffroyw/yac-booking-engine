@@ -3,4 +3,4 @@ password:
 url: jdbc:mysql://127.0.0.1/yac_booking_engine
 driver: com.mysql.jdbc.Driver
 dialect: org.hibernate.dialect.MySQLDialect
-hibernateHbm2ddl: udpate
+hibernateHbm2ddl: create
